@@ -1,0 +1,141 @@
+1. Descriptive Analysis
+a. Calculate the total number of restaurants by city or locality.
+
+Query:
+a)	For City 
+
+SELECT 
+    "City", 
+    COUNT(DISTINCT "Restaurant ID") AS total_restaurants
+FROM 
+    zomato
+GROUP BY 
+    "City"
+ORDER BY 
+    total_restaurants DESC;
+
+b) For Locality
+
+SELECT 
+    "Locality", 
+    COUNT(DISTINCT "Restaurant ID") AS total_restaurants
+FROM 
+    zomato
+GROUP BY 
+    "Locality"
+ORDER BY 
+    total_restaurants DESC;
+
+
+b. Find the average rating of restaurants by city or locality.
+
+a) For City
+
+SELECT 
+    "City", 
+    AVG("Aggregate rating") AS avg_rating
+FROM 
+    zomato
+GROUP BY 
+    "City"
+ORDER BY 
+    avg_rating DESC;
+
+b) For Locality
+
+SELECT 
+    "Locality", 
+    AVG("Aggregate rating") AS avg_rating
+FROM 
+    zomato
+GROUP BY 
+    "Locality"
+ORDER BY 
+    avg_rating DESC;
+
+c)	Calculate the count of cuisines and analyze most popular cuisines
+
+SELECT 
+    unnest(string_to_array("Cuisines", ', ')) AS cuisine,
+    COUNT(*) AS cuisine_count
+FROM 
+    "zomato"
+GROUP BY 
+    cuisine
+ORDER BY 
+    cuisine_count DESC;
+
+
+2. Comparative Analysis
+a) Compare the average cost for two across different cities.
+
+SELECT 
+    "City", 
+    "Locality", 
+    AVG("Average Cost for two") AS average_cost_for_two
+FROM 
+    "zomato"
+GROUP BY 
+    "City", "Locality"
+ORDER BY 
+    average_cost_for_two DESC;
+
+b) Compare the average votes received by restaurants offering different cuisines.
+Since the cuisines are present in a single row, separated by commas, there is a need to use the UNNEST() function to split the cuisines:
+
+SELECT 
+    cuisine,
+    AVG("Votes") AS average_votes
+FROM (
+    SELECT 
+        unnest(string_to_array("Cuisines", ', ')) AS cuisine,
+        "Votes"
+    FROM 
+        "zomato"
+) AS cuisine_data
+GROUP BY 
+    cuisine
+ORDER BY 
+    average_votes DESC;
+
+3. Aggregation and Grouping
+a) Group restaurants by Price range and find the average aggregate rating for each range.
+
+SELECT 
+    "Price range", 
+	AVG("Aggregate rating") as avg_aggregate_rating
+FROM 
+    "zomato"
+GROUP BY 
+    "Price range"
+ORDER BY 
+     avg_aggregate_rating DESC,"Price range" DESC;
+
+b) Group by City to find the total votes and average votes.
+
+4. Filtering and Segmentation
+a) Identify the top-rated restaurants (e.g., Aggregate rating > 4.5).
+b) Filter for restaurants that have table booking but no online delivery.
+c) Find restaurants with the most votes in each city.
+
+5. Trend Analysis
+a) Analyze the relationship between price range and aggregate ratings.
+b) Study how Average Cost for Two affects the number of votes.
+
+6. Geographical Insights
+a) Identify restaurants with the highest rating within a specific Longitude and Latitude range.
+b) Determine which cities/localities have the most number of restaurants.
+
+7. Customer Preferences
+a) Analyze the most popular cuisines based on votes and aggregate ratings.
+b) Find out which price range receives the highest votes.
+
+8. Outlier Detection
+a) Detect restaurants with unusually high or low average costs.
+b) Identify restaurants with a significantly higher number of votes compared to the average.
+
+9. Textual Insights
+a) Identify the most common cuisines offered across restaurants in a city.
+b) Analyze Rating text distribution (e.g., "Excellent," "Very Good") by cuisine or city.
+
+10. Performance Ranking
