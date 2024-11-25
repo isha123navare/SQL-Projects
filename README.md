@@ -1,6 +1,6 @@
 # SQL-Projects
 
-# Project 1: Analysis of zomato affliated restaurants
+# Project 1: Analysis of zomato affiliated restaurants
 
 Insights:
 1. Number of Restaurants: New Delhi, Gurgaon, Noida have the highest number of restaurants. Locality-wise, Connaught Palace, Rajouri Garden, Shahdara have the highest number of restaurants.
