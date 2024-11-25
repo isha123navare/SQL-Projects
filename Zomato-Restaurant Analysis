@@ -175,23 +175,97 @@ ORDER BY
 
 
 5. Trend Analysis
-a) Analyze the relationship between price range and aggregate ratings.
-b) Study how Average Cost for Two affects the number of votes.
+a) Study how Average Cost for Two affects the number of votes.
+
+SELECT 
+    "Average Cost for two", 
+    AVG("Votes") AS average_votes
+FROM 
+    zomato
+GROUP BY 
+    "Average Cost for two"
+ORDER BY 
+	"Average Cost for two" DESC, average_votes;
+
 
 6. Geographical Insights
-a) Identify restaurants with the highest rating within a specific Longitude and Latitude range.
-b) Determine which cities/localities have the most number of restaurants.
+a) Determine which cities/localities have the most number of restaurants.
 
-7. Customer Preferences
-a) Analyze the most popular cuisines based on votes and aggregate ratings.
-b) Find out which price range receives the highest votes.
+SELECT 
+    "City", 
+    Count("Restaurant ID") AS count_of_restaurants
+FROM 
+    zomato
+GROUP BY 
+    "City"
+ORDER BY 
+	count_of_restaurants DESC;
 
-8. Outlier Detection
+
+7. Outlier Detection
 a) Detect restaurants with unusually high or low average costs.
-b) Identify restaurants with a significantly higher number of votes compared to the average.
 
-9. Textual Insights
+WITH CostStats AS (
+    SELECT 
+        AVG("Average Cost for two") AS avg_cost,
+        STDDEV("Average Cost for two") AS std_dev
+    FROM 
+        zomato
+)
+SELECT 
+    "Restaurant Name", 
+    "Average Cost for two",
+    "City", 
+    "Locality"
+FROM 
+    zomato,
+    CostStats
+WHERE 
+    "Average Cost for two" > avg_cost + 2 * std_dev
+    OR "Average Cost for two" < avg_cost - 2 * std_dev
+ORDER BY 
+    "Average Cost for two" DESC;
+
+
+8. Textual Insights
 a) Identify the most common cuisines offered across restaurants in a city.
-b) Analyze Rating text distribution (e.g., "Excellent," "Very Good") by cuisine or city.
 
-10. Performance Ranking
+WITH CuisineExploded AS (
+    SELECT 
+        "City", 
+        UNNEST(STRING_TO_ARRAY("Cuisines", ', ')) AS Cuisine
+    FROM 
+        zomato
+)
+SELECT DISTINCT ON ("City")
+    "City", 
+    Cuisine, 
+    COUNT(*) OVER (PARTITION BY "City", Cuisine) AS CuisineCount
+FROM 
+    CuisineExploded
+ORDER BY 
+    "City", CuisineCount DESC;
+
+b) Analyze Rating text distribution (e.g., "Excellent," "Very Good") by cuisine and city.
+
+WITH CuisineExploded AS (
+    SELECT 
+        "City", 
+        UNNEST(STRING_TO_ARRAY("Cuisines", ', ')) AS Cuisine, 
+        "Rating text"
+    FROM 
+        zomato
+)
+SELECT 
+    "City", 
+    Cuisine, 
+    COUNT(*) AS RatingTextCount
+FROM 
+    CuisineExploded
+GROUP BY 
+    "City", Cuisine, "Rating text"
+HAVING 
+    "Rating text" = 'Excellent'
+ORDER BY 
+    "City", Cuisine, RatingTextCount DESC;
+
