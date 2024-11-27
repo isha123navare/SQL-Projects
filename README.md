@@ -1,6 +1,6 @@
 # SQL-Projects
 
-# Project 1: Analysis of zomato affiliated restaurants
+# Project 1: Analysis of Zomato Affiliated Restaurants
 
 Insights:
 1. Number of Restaurants: New Delhi, Gurgaon, Noida have the highest number of restaurants. Locality-wise, Connaught Palace, Rajouri Garden, Shahdara have the highest number of restaurants.
@@ -12,5 +12,13 @@ Insights:
 
 Tools Utilized:
 PostgreSQL, Excel
+
+# Project 2: Optimizing Online Sports Retail Revenue
+
+1. One of Nike's products was the highest revenue generating product amongst all. But overall revenue of Adidas far surpasses that of Nike.
+2. In the dataset, Adidas products contributed almost 93% of revenue.
+3. Certain products such as product "310805-137" had only 0.5% revenue share but a high rating of 5(out of 5) & could benefit from targeted quality improvements to sustain sales.
+4. Conducted brand performance analysis, identifying that Nike had a higher percentage (32.29%) of customer ratings above 4 compared to Adidas (19.73%), showcasing stronger customer satisfaction.
+5. 
    
    
