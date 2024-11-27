@@ -19,6 +19,6 @@ PostgreSQL, Excel
 2. In the dataset, Adidas products contributed almost 93% of revenue.
 3. Certain products such as product "310805-137" had only 0.5% revenue share but a high rating of 5(out of 5) & could benefit from targeted quality improvements to sustain sales.
 4. Conducted brand performance analysis, identifying that Nike had a higher percentage (32.29%) of customer ratings above 4 compared to Adidas (19.73%), showcasing stronger customer satisfaction.
-5. 
+5. About 20% of Adidas products have high engagement but poor financial performance. 
    
    
