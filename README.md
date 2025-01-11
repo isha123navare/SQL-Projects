@@ -8,25 +8,33 @@ Restaurant ID,Restaurant Name,Country Code,City,Address,Locality,Locality Verbos
 
 ## Worked On:
 **Descriptive Analysis:**
+
 Calculated the total number of restaurants grouped by city and locality.
 Found the average ratings of restaurants grouped by city and locality.
 Analyzed the count of cuisines and identified the most popular cuisines using the UNNEST() function.
+
 **Comparative Analysis:**
 Compared the average cost for two across different cities and localities.
 Compared the average votes received by restaurants offering different cuisines using UNNEST() to split cuisines for analysis.
+
 **Aggregation and Grouping:**
 Grouped restaurants by price range and calculated the average aggregate rating for each range.
 Grouped by cuisines to find the total votes and average aggregate ratings for each cuisine and price range.
+
 **Filtering and Segmentation:**
 Identified top-rated restaurants with the maximum aggregate rating.
 Filtered for restaurants that offer table booking but no online delivery.
 Found restaurants with the most votes in each city.
+
 **Trend Analysis:**
 Studied the relationship between Average Cost for Two and number of votes, identifying trends in customer spending and engagement.
+
 **Geographical Insights:**
 Determined cities and localities with the highest number of restaurants.
+
 **Outlier Detection:**
 Detected restaurants with unusually high or low average costs using statistical methods such as AVG and STDDEV.
+
 **Textual Insights:**
 Identified the most common cuisines offered across restaurants in a city by leveraging the UNNEST() function.
 Analyzed the distribution of Rating Text (e.g., "Excellent," "Very Good") by cuisine and city.
