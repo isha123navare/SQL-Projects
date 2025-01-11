@@ -35,15 +35,15 @@ Restaurant ID,Restaurant Name,Country Code,City,Address,Locality,Locality Verbos
 
 **Trend Analysis:**
 
-Studied the relationship between Average Cost for Two and number of votes, identifying trends in customer spending and engagement.
+1. Studied the relationship between Average Cost for Two and number of votes, identifying trends in customer spending and engagement.
 
 **Geographical Insights:**
 
-Determined cities and localities with the highest number of restaurants.
+1. Determined cities and localities with the highest number of restaurants.
 
 **Outlier Detection:**
 
-Detected restaurants with unusually high or low average costs using statistical methods such as AVG and STDDEV.
+1. Detected restaurants with unusually high or low average costs using statistical methods such as AVG and STDDEV.
 
 **Textual Insights:**
 
@@ -73,26 +73,40 @@ traffic: product_id, last_visited
 
 ## Worked On:
 **Product Performance Analysis**
-Top-performing Products: Ranked products and brands by revenue.
-Revenue Share: Calculated each product’s and brand’s percentage contribution to total revenue.
-Low-performing Products: Identified products with low revenue.
-Sales vs. Listing Price: Analyzed average discount percentages across brands.
-High-revenue, Low-review Products: Found high-earning products with poor ratings.
-Discounts vs. Sales Volume: Explored the relationship between discounts and revenue.
+
+1. Top-performing Products: Ranked products and brands by revenue.
+
+2. Revenue Share: Calculated each product’s and brand’s percentage contribution to total revenue.
+
+3. Low-performing Products: Identified products with low revenue.
+
+4. Sales vs. Listing Price: Analyzed average discount percentages across brands.
+
+5. High-revenue, Low-review Products: Found high-earning products with poor ratings.
+
+6. Discounts vs. Sales Volume: Explored the relationship between discounts and revenue.
 
 **Customer Ratings and Reviews**
-Highly-rated Products: Percentage of products with ratings > 4.
-High Engagement, Low Revenue: Identified well-reviewed but low-earning products.
-Review-to-Revenue Ratio: Analyzed how reviews correlate with revenue ranges.
+
+1. Highly-rated Products: Percentage of products with ratings > 4.
+
+2. High Engagement, Low Revenue: Identified well-reviewed but low-earning products.
+
+3. Review-to-Revenue Ratio: Analyzed how reviews correlate with revenue ranges.
 
 **Traffic and Engagement**
-Most Visited Products: Ranked products based on recent visits.
-Brand Engagement: Compared brands by traffic and visits.
+
+1. Most Visited Products: Ranked products based on recent visits.
+
+2. Brand Engagement: Compared brands by traffic and visits.
 
 **Revenue and Pricing Trends**
-Price Sensitivity: Analyzed products whose revenue was impacted by price changes.
-Revenue by Discount Tier: Compared revenue across different discount ranges.
-Brand Discounts: Ranked brands by average discounts offered.
+
+1. Price Sensitivity: Analyzed products whose revenue was impacted by price changes.
+
+2. Revenue by Discount Tier: Compared revenue across different discount ranges.
+
+3. Brand Discounts: Ranked brands by average discounts offered.
 
 ## Key Insights & Observations
 1. One of Nike's products was the highest revenue generating product amongst all. But overall revenue of Adidas far surpasses that of Nike.
