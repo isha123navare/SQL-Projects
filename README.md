@@ -1,8 +1,37 @@
-# SQL-Projects
-
 # Project 1: Analysis of Zomato Affiliated Restaurants
 
-Insights:
+## Dataset Link:
+https://drive.google.com/file/d/1J9zO8LxROxIyHCEwrxkxPVMrnf1BgCxD/view?usp=sharing
+
+## Dataset Contains: 
+Restaurant ID,Restaurant Name,Country Code,City,Address,Locality,Locality Verbose,Longitude,Latitude,Cuisines,Average Cost for two,Currency,Has Table booking,Has Online delivery,Is delivering now,Switch to order menu,Price range,Aggregate rating,Rating color,Rating text,Votes
+
+## Worked On:
+**Descriptive Analysis:**
+Calculated the total number of restaurants grouped by city and locality.
+Found the average ratings of restaurants grouped by city and locality.
+Analyzed the count of cuisines and identified the most popular cuisines using the UNNEST() function.
+**Comparative Analysis:**
+Compared the average cost for two across different cities and localities.
+Compared the average votes received by restaurants offering different cuisines using UNNEST() to split cuisines for analysis.
+**Aggregation and Grouping:**
+Grouped restaurants by price range and calculated the average aggregate rating for each range.
+Grouped by cuisines to find the total votes and average aggregate ratings for each cuisine and price range.
+**Filtering and Segmentation:**
+Identified top-rated restaurants with the maximum aggregate rating.
+Filtered for restaurants that offer table booking but no online delivery.
+Found restaurants with the most votes in each city.
+**Trend Analysis:**
+Studied the relationship between Average Cost for Two and number of votes, identifying trends in customer spending and engagement.
+**Geographical Insights:**
+Determined cities and localities with the highest number of restaurants.
+**Outlier Detection:**
+Detected restaurants with unusually high or low average costs using statistical methods such as AVG and STDDEV.
+**Textual Insights:**
+Identified the most common cuisines offered across restaurants in a city by leveraging the UNNEST() function.
+Analyzed the distribution of Rating Text (e.g., "Excellent," "Very Good") by cuisine and city.
+
+## Key Observations & Insights:
 1. Number of Restaurants: New Delhi, Gurgaon, Noida have the highest number of restaurants. Locality-wise, Connaught Palace, Rajouri Garden, Shahdara have the highest number of restaurants.
 2. Average Rating: Restaurants in Inner City, Quezon City, Makati City (Cities) and West Park, Old Dutch Hospital Port, Setor de clubes Esportivos Sul(Localities) have the highest average aggragate ratings.
 3. Popular Cuisines: North Indian, Chinese, Fast Food are the most popular cuisines.
@@ -10,11 +39,42 @@ Insights:
 5. Restaurants with the highest votes in each city was analyzed. For instance, in Abu Dhabi, The Cheesecake Factory has highest votes.
 6. The most famous cuisine in each city was analyzed. For instance, in Ahmedabad continental food is widely preferred.
 
-Tools Utilized:
-PostgreSQL, Excel
-
 # Project 2: Optimizing Online Sports Retail Revenue
 
+## Dataset Link:
+https://drive.google.com/drive/folders/15NiN1BuWoZqYjZUruC--9ydPGTjCZTVu?usp=sharing
+
+## Dataset Contains:
+brands: product_id, brand
+Finance: product_id, listing_price, sale_price, discount, revenue 
+info: product_name, product_id, description
+reviews: product_id, rating, reviews
+traffic: product_id, last_visited
+
+## Worked On:
+**Product Performance Analysis**
+Top-performing Products: Ranked products and brands by revenue.
+Revenue Share: Calculated each product’s and brand’s percentage contribution to total revenue.
+Low-performing Products: Identified products with low revenue.
+Sales vs. Listing Price: Analyzed average discount percentages across brands.
+High-revenue, Low-review Products: Found high-earning products with poor ratings.
+Discounts vs. Sales Volume: Explored the relationship between discounts and revenue.
+
+**Customer Ratings and Reviews**
+Highly-rated Products: Percentage of products with ratings > 4.
+High Engagement, Low Revenue: Identified well-reviewed but low-earning products.
+Review-to-Revenue Ratio: Analyzed how reviews correlate with revenue ranges.
+
+**Traffic and Engagement**
+Most Visited Products: Ranked products based on recent visits.
+Brand Engagement: Compared brands by traffic and visits.
+
+**Revenue and Pricing Trends**
+Price Sensitivity: Analyzed products whose revenue was impacted by price changes.
+Revenue by Discount Tier: Compared revenue across different discount ranges.
+Brand Discounts: Ranked brands by average discounts offered.
+
+## Key Insights & Observations
 1. One of Nike's products was the highest revenue generating product amongst all. But overall revenue of Adidas far surpasses that of Nike.
 2. In the dataset, Adidas products contributed almost 93% of revenue.
 3. Certain products such as product "310805-137" had only 0.5% revenue share but a high rating of 5(out of 5) & could benefit from targeted quality improvements to sustain sales.
